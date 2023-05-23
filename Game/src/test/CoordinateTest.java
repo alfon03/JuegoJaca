@@ -18,7 +18,7 @@ class CoordinateTest {
 	
 	
 	@Test
-	void testCoordinateBien() {
+	void testCoordinateOK() {
 		Coordinate Coordinate1 = new Coordinate(1,1);
 		
 		assertEquals(Coordinate1.getX(), 1);
@@ -28,7 +28,7 @@ class CoordinateTest {
 	}
 
 	@Test
-	void testCoordinateMal() {
+	void testCoordinateKO() {
 		Coordinate Coordinate1 = new Coordinate(10000,10000);
 		
 		assertEquals(Coordinate1.getX(), 0);
