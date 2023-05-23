@@ -206,7 +206,7 @@ public class GameGUI extends Game implements ActionListener {
 		}
 
 		if (super.isTerminado()) {
-			JOptionPane.showMessageDialog(ventana, "Juego terminado. El ganador es: " + super.getGanador());
+			JOptionPane.showMessageDialog(ventana, "Juego terminado. El ganador es: " + super.getNombrePlayerQueJuega());
 			System.exit(0);
 		}
 
