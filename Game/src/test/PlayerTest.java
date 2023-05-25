@@ -14,73 +14,73 @@ import org.junit.jupiter.params.provider.EnumSource;
 
 import logica.Constans;
 
-public class PlayerTest {
+ class PlayerTest {
 
 	private Player player;
 	private Player player2;
 
 	@BeforeEach
-	public void setup() {
+	 void setup() {
 		player = new Player(PlayerType.GUERRERO);
 		player2 = new Player(PlayerType.MAGO);
 	}
 
 	@Test
-	public void testGetNombre() {
+	 void testGetNombre() {
 		String nombre = player.getNombre();
 		Assertions.assertEquals("GUERRERO", nombre);
 	}
 
 	@Test
-	public void testGetFuerzaParaLuchar() {
+	 void testGetFuerzaParaLuchar() {
 		int fuerza = player.getFuerzaParaLuchar();
 		Assertions.assertTrue(fuerza >= 0 || fuerza < player.getFuerzaParaLuchar());}
 
 	@Test
-	public void testGetMagiaParaLuchar() {
+	 void testGetMagiaParaLuchar() {
 		int magia = player.getMagiaParaLuchar();
 		Assertions.assertTrue(magia >= 0 && magia < player.getMagiaParaLuchar());}
 
 	@Test
-	public void testGetVelocidadParaLuchar() {
+	 void testGetVelocidadParaLuchar() {
 		int velocidad = player.getVelocidadParaLuchar();
 		Assertions.assertTrue(velocidad >= 0 && velocidad < player.getVelocidadParaLuchar());}
 
 	@Test
-	public void testSetDinero() throws PlayerException {
+	 void testSetDinero() throws PlayerException {
 		player.setDinero(10);
 		Assertions.assertEquals(10, player.getDinero());
 	}
 
 	@Test
-	public void testSetDineroWithNegativeValue() {
+	 void testSetDineroWithNegativeValue() {
 		Assertions.assertThrows(PlayerException.class, () -> player.setDinero(-10));
 	}
 
 	@Test
-	public void testSetPociones() throws PlayerException {
+	 void testSetPociones() throws PlayerException {
 		player.setPociones(5);
 		Assertions.assertEquals(5, player.getPociones());
 	}
 
 	@Test
-	public void testSetPocionesWithNegativeValue() {
+	 void testSetPocionesWithNegativeValue() {
 		Assertions.assertThrows(PlayerException.class, () -> player.setPociones(-5));
 	}
 
 	@Test
-	public void testSetGemas() throws PlayerException {
+	 void testSetGemas() throws PlayerException {
 		player.setGemas(3);
 		Assertions.assertEquals(3, player.getGemas());
 	}
 
 	@Test
-	public void testSetGemasWithNegativeValue() {
+	 void testSetGemasWithNegativeValue() {
 		Assertions.assertThrows(PlayerException.class, () -> player.setGemas(-3));
 	}
 
 	@Test
-	public void testResumen() throws PlayerException {
+	 void testResumen() throws PlayerException {
 		player.setDinero(5);
 		player.setGemas(2);
 		player.setPociones(3);
@@ -90,7 +90,7 @@ public class PlayerTest {
 
 	@ParameterizedTest
 	@EnumSource(PlayerType.class)
-	public void testLuchaWithEqualStrength(PlayerType playerType) throws PlayerException {
+	 void testLuchaWithEqualStrength(PlayerType playerType) throws PlayerException {
 		Player opponent = new Player(playerType);
 		int result = player.lucha(opponent);
 		Assertions.assertNotEquals(Constans.EMPATE, result);
@@ -98,7 +98,7 @@ public class PlayerTest {
 
 	@ParameterizedTest
 	@EnumSource(PlayerType.class)
-	public void testLuchaWithPlayerOneWin(PlayerType playerType) throws PlayerException {
+	 void testLuchaWithPlayerOneWin(PlayerType playerType) throws PlayerException {
 		Player opponent = new Player(playerType);
 		opponent.setDinero(5);
 		int result = player.lucha(opponent);
@@ -108,7 +108,7 @@ public class PlayerTest {
 
 	@ParameterizedTest
 	@EnumSource(PlayerType.class)
-	public void testLuchaWithPlayerTwoWin(PlayerType playerType) throws PlayerException {
+	 void testLuchaWithPlayerTwoWin(PlayerType playerType) throws PlayerException {
 		Player opponent = new Player(playerType);
 		player.setDinero(5);
 		int result = player.lucha(opponent);
@@ -116,7 +116,7 @@ public class PlayerTest {
 				|| result == Constans.PIERDE_MUERE);}
 
 	@Test
-	public void testEncuentraRocaWithGemas() throws PlayerException {
+	void testEncuentraRocaWithGemas() throws PlayerException {
 		player.setGemas(2);
 		int result = player.encuentraRoca();
 		Assertions.assertEquals(Constans.ROMPE_ROCA_CON_GEMA, result);

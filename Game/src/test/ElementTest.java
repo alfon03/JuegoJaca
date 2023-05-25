@@ -10,10 +10,10 @@ import procedimientos.ElementType;
 import org.junit.Assert;
 
 
-public class ElementTest {
+ class ElementTest {
 
     @Test
-    public void testToString() {
+     void testToString() {
         Element element = new Element(ElementType.ROCA);
         String expected = "Elemento, tipo = ROCA";
         String actual = element.toString();
@@ -21,7 +21,7 @@ public class ElementTest {
     }
 
     @Test
-    public void testGetTipo() {
+     void testGetTipo() {
         Element element = new Element(ElementType.ELFO);
         ElementType expected = ElementType.ELFO;
         ElementType actual = element.getTipo();
@@ -29,14 +29,14 @@ public class ElementTest {
     }
 
     @Test
-    public void testHashCode() {
+     void testHashCode() {
         Element element1 = new Element(ElementType.DINERO);
         Element element2 = new Element(ElementType.DINERO);
         Assert.assertEquals(element1.hashCode(), element2.hashCode());
     }
 
     @Test
-    public void testEquals() {
+     void testEquals() {
         Element element1 = new Element(ElementType.DINERO);
         Element element2 = new Element(ElementType.DINERO);
         Element element3 = new Element(ElementType.GEMA);

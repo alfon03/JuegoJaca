@@ -97,28 +97,28 @@ public class GameGUI extends Game implements ActionListener {
 		} else {
 			switch (super.obtenerElementoTablero(new Coordinate(x, y)).getTipo().getSimbolo()) {
 			case 'D':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/dinero.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/rupia1.gif");
 				break;
 			case 'P':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/pocion.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/Potion.gif");
 				break;
 			case 'R':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/roca.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/Rock.png");
 				break;
 			case 'Y':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/gema.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/diamante.gif");
 				break;
 			case 'E':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/elfo.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/Elfo_legolas.gif");
 				break;
 			case 'G':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/guerrero.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/Guerrero.gif");
 				break;
 			case 'M':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/mago.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/Mago.gif");
 				break;
 			case 'O':
-				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/ogro.png");
+				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/Ganon_ogro.gif");
 				break;
 			default:
 				imageIcon = new ImageIcon(System.getProperty("user.dir") + "/img/nada.png");
